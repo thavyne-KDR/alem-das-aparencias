@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F6F7FB">
+    <title>Além das Aparências</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/resultado.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main id="app" class="app-shell">
+        <section id="splash-screen" class="screen screen-splash" aria-labelledby="splash-title">
+            <div class="hero-panel">
+                <img src="assets/imagens/diversidade.jpg" alt="Ilustração abstrata com diferentes pessoas e cores" class="hero-image">
+                <div class="hero-overlay">
+                    <h1 id="splash-title">Além das Aparências</h1>
+                </div>
+            </div>
+
+            <div class="screen-content splash-content">
+                <p class="lead">
+                    Antes de julgar uma cena, vale olhar de novo.
+                </p>
+
+                <button id="start-btn" class="primary-action" type="button">
+                    Começar
+                </button>
+            </div>
+        </section>
+
+        <section id="intro-screen" class="screen hidden" aria-labelledby="intro-title">
+            <div class="screen-content intro-content">
+                <h2 id="intro-title">Antes de começar</h2>
+                <p class="support-text">
+                    Você verá algumas situações inspiradas no cotidiano.
+
+                    Escolha a alternativa que mais se aproxima do que você pensaria naquele momento. 
+                </p>
+
+                <button id="intro-btn" class="primary-action" type="button">
+                    Vamos lá
+                </button>
+            </div>
+        </section>
+
+        <section id="quiz-screen" class="screen hidden" aria-labelledby="question">
+            <div class="top-bar">
+
+                <div class="progress-info">
+                   <span id="question-counter">1/8</span>
+                </div>
+                
+                <div class="progress-track" aria-hidden="true">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="screen-content quiz-content">
+                <p id="question-context" class="scene-label">Leia a cena</p>
+                <h2 id="question">A cena aparecerá aqui.</h2>
+                <div id="answers" class="answers-grid" aria-label="Caminhos possíveis"></div>
+            </div>
+        </section>
+
+        <section id="feedback-screen" class="screen hidden" aria-labelledby="feedback-title">
+            <div class="screen-content feedback-content">
+                <div class="feedback-header">
+                    <span class="feedback-mark" aria-hidden="true"></span>
+                    <p class="eyebrow">olhando de novo</p>
+                </div>
+
+                <p id="feedback-choice" class="choice-recap"></p>
+                <h2 id="feedback-title">Reflexão</h2>
+                <p id="feedback-text"></p>
+                <p id="feedback-tip" class="feedback-tip"></p>
+
+                <button id="next-question-btn" class="primary-action" type="button">
+                    Continuar
+                </button>
+            </div>
+        </section>
+
+        <section id="reflection-screen" class="screen hidden" aria-labelledby="reflection-title">
+            <div class="screen-content reflection-content">
+                <p class="eyebrow">antes de sair</p>
+                <h2 id="reflection-title">Que reflexão você leva daqui?</h2>
+                <p class="support-text">
+                       Ao longo das cenas, diferentes situações mostraram
+                       como nossas percepções influenciam a forma como
+                       enxergamos as pessoas.
+                </p>
+
+                <label class="reflection-label" for="reflection">Sua reflexão</label>
+                <textarea id="reflection" maxlength="420" placeholder="Ex.: O que mais chamou sua atenção durante a experiência?"></textarea>
+                <div class="reflection-tools">
+                    <span id="reflection-count">0/420</span>
+                    <span id="reflection-hint">Uma frase sincera já basta.</span>
+                </div>
+
+                <button id="finish-btn" class="primary-action" type="button" disabled>
+                    Ver meu mapa
+                </button>
+            </div>
+        </section>
+
+        <section id="result-screen" class="screen hidden" aria-labelledby="result-title">
+            <div class="screen-content result-content">
+                <p class="eyebrow">seu percurso</p>
+                <h2 id="result-title">O que suas escolhas revelam</h2>
+                <p class="support-text">
+                   Ao longo das cenas, diferentes situações convidaram você a observar contextos, atitudes e percepções presentes no cotidiano.
+                </p>
+
+                <div id="result-summary" class="result-summary" aria-live="polite"></div>
+
+                <div class="reflection-result-card">
+                   <h3>Sua reflexão</h3>
+
+                <p id="reflection-result"></p>
+                </div>
+
+                <div class="chart-panel">
+                    <canvas id="grafico" width="320" height="260" aria-label="Mapa visual das lentes da jornada"></canvas>
+                </div>
+
+                <div id="result-insights" class="result-insights"></div>
+
+                <div class="result-actions">
+
+                    <button id="restart-btn" class="primary-action" type="button">
+                        Refazer
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/dados.js" defer></script>
+    <script src="js/progresso.js" defer></script>
+    <script src="js/quiz.js" defer></script>
+    <script src="js/grafico.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>

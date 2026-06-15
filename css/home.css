@@ -1,0 +1,144 @@
+.screen-splash {
+    justify-content: center;
+    gap: 0;
+    background:
+        linear-gradient(180deg, rgba(255, 216, 77, 0.22), transparent 38%),
+        linear-gradient(135deg, rgba(0, 168, 150, 0.16), transparent 40%);
+}
+
+.hero-panel {
+    position: relative;
+    width: 100%;
+    height: clamp(300px, 54dvh, 430px);
+    overflow: hidden;
+    margin: 0;
+    border-radius: var(--radius) var(--radius) 0 0;
+    background: #0f172a;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(8, 13, 28, 0.02) 0%, rgba(8, 13, 28, 0.3) 46%, rgba(8, 13, 28, 0.82) 100%),
+        linear-gradient(45deg, rgba(15, 118, 110, 0.26), transparent 45%);
+}
+
+.hero-overlay {
+    position: absolute;
+    right: 22px;
+    bottom: 28px;
+    left: 22px;
+    z-index: 1;
+}
+
+.hero-overlay h1 {
+    color: #ffffff;
+}
+
+.splash-content {
+    display: grid;
+    gap: 24px;
+    padding: 34px 28px 32px;
+    border-radius: 0 0 var(--radius) var(--radius);
+    background: #ffffff;
+    box-shadow: 0 22px 52px rgba(34, 42, 56, 0.12);
+}
+
+.lead{
+    text-align:center;
+}
+
+.intro-content{
+    display:flex;
+    flex-direction:column;
+
+    min-height:75vh;
+
+    padding-top:80px;
+}
+
+.intro-content h2{
+    margin-top:60px;
+}
+
+.intro-content .support-text{
+    font-size:1.2rem;
+    line-height:1.7;
+    max-width:420px;
+}
+
+.quick-rules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 2px 0 4px;
+}
+
+.quick-rules span {
+    min-height: 72px;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    border-radius: var(--radius);
+    background: #ffffff;
+    color: var(--ink);
+    font-size: 0.84rem;
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 0 6px 0 rgba(23, 23, 25, 0.08), inset 0 0 0 1px var(--line);
+}
+
+.credits-content p {
+    font-size: 0.96rem;
+}
+
+.credits-list {
+    display: grid;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.86);
+}
+
+.intro-content{
+    margin-top: -60px;
+    gap: 24px;
+}
+
+.intro-content .primary-action{
+    width:220px;
+
+    margin-top:auto;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.credits-list strong {
+    color: var(--ink);
+}
+
+@media (min-width: 760px) {
+    .screen-splash {
+        padding: 34px;
+    }
+
+    .hero-panel {
+        height: 430px;
+    }
+
+    .hero-overlay {
+        right: 34px;
+        bottom: 34px;
+        left: 34px;
+    }
+}
