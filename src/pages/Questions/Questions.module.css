@@ -1,0 +1,97 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 28px;
+  animation: fadeIn 350ms both;
+}
+
+.progress {
+  margin-bottom: 22px;
+}
+
+.roundBadge {
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-token);
+  color: var(--color-text-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 var(--color-text-primary);
+  margin-bottom: 16px;
+}
+
+.situationBlock {
+  background-color: var(--color-card);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  margin-bottom: 26px;
+  border: 1.5px solid var(--color-border-strong);
+  box-shadow: 6px 6px 0 var(--color-shadow-card);
+}
+
+.situationLabel {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.situation {
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.questionBlock {
+  margin-bottom: 18px;
+}
+
+.prompt {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: 0;
+}
+
+.hint {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-top: 2px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.actions {
+  padding-bottom: 8px;
+}
+
+@media (min-width: 760px) {
+  .page {
+    padding-top: 12px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-bg: #f7fbf8;
+  --color-surface: #e5f5ef;
+  --color-card: #ffffff;
+  --color-border: #b9ded3;
+  --color-border-strong: #78b9ad;
+
+  --color-text-primary: #10231f;
+  --color-text-secondary: #365f58;
+  --color-text-muted: #66867f;
+
+  --color-accent: #0f766e;
+  --color-accent-hover: #0b5f59;
+  --color-accent-light: #dff8f0;
+  --color-accent-lighter: #f1fcf8;
+  --color-token: #f4d35e;
+  --color-quest: #ef476f;
+  --color-shadow-card: #c5eee4;
+
+  --color-white: #ffffff;
+
+  --font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(16, 35, 31, 0.08), 0 1px 2px rgba(16, 35, 31, 0.04);
+  --shadow-md: 0 4px 12px rgba(16, 35, 31, 0.08), 0 2px 4px rgba(16, 35, 31, 0.04);
+  --shadow-lg: 0 8px 24px rgba(16, 35, 31, 0.1), 0 4px 8px rgba(16, 35, 31, 0.04);
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  --max-width: 760px;
+  --page-padding: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  font-family: var(--font-family);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p {
+  line-height: 1.7;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-slow) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--transition-slow) both;
+}
