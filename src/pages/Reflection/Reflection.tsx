@@ -35,9 +35,22 @@ export function Reflection({
         </div>
 
         <div className={styles.reflection}>
-          <div className={styles.icon} aria-hidden="true">
-            <ReflectionIcon />
-          </div>
+          <svg
+            viewBox="0 0 280 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={styles.pattern}
+            aria-hidden="true"
+          >
+            {[0,1,2,3,4,5,6,7,8].map((i) => (
+              <polygon
+                key={i}
+                points={`${i*32+16},2 ${i*32+30},14 ${i*32+16},26 ${i*32+2},14`}
+                fill={i % 2 === 0 ? '#C4623A' : '#E8A838'}
+                opacity="0.85"
+              />
+            ))}
+          </svg>
           <span className={styles.unlock}>Pista desbloqueada</span>
           <h2 className={styles.reflectionTitle}>{question.reflection.title}</h2>
           <p className={styles.reflectionText}>{question.reflection.text}</p>
@@ -55,21 +68,3 @@ export function Reflection({
   );
 }
 
-function ReflectionIcon() {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M12 3L13.9 8.9L20 9.2L15.2 12.9L16.8 18.8L12 15.4L7.2 18.8L8.8 12.9L4 9.2L10.1 8.9L12 3Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
