@@ -25,12 +25,12 @@
 }
 
 .situationBlock {
-  background-color: var(--color-card);
-  border-radius: var(--radius-md);
+  background-color: var(--color-question-card);
+  border-radius: var(--radius-xl);
   padding: 22px 20px;
   margin-bottom: 26px;
-  border: 1.5px solid var(--color-border-strong);
-  box-shadow: 6px 6px 0 var(--color-shadow-card);
+  border: 1.5px solid #b8d8ea;
+  box-shadow: 6px 6px 0 #b0cfe0;
 }
 
 .situationLabel {

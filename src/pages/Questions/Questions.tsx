@@ -2,6 +2,7 @@ import { Layout } from '../../components/Layout/Layout';
 import { ProgressBar } from '../../components/ProgressBar/ProgressBar';
 import { OptionCard } from '../../components/OptionCard/OptionCard';
 import { Button } from '../../components/Button/Button';
+import { PersonaCard } from '../../components/PersonaCard/PersonaCard';
 import type { Question } from '../../types';
 import styles from './Questions.module.css';
 
@@ -28,6 +29,8 @@ export function Questions({
         <div className={styles.progress}>
           <ProgressBar current={questionNumber} total={totalQuestions} />
         </div>
+
+        <PersonaCard position={questionNumber} />
 
         <div className={styles.roundBadge}>Rodada {questionNumber}</div>
 
