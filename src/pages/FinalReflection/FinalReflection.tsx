@@ -1,17 +1,17 @@
 import { Layout } from '../../components/Layout/Layout';
 import { Button } from '../../components/Button/Button';
-import { questions } from '../../data/questions';
 import styles from './FinalReflection.module.css';
 
 interface FinalReflectionProps {
   value: string;
   onChange: (text: string) => void;
   onSubmit: () => void;
+  totalQuestions: number;
 }
 
 const MAX_CHARS = 400;
 
-export function FinalReflection({ value, onChange, onSubmit }: FinalReflectionProps) {
+export function FinalReflection({ value, onChange, onSubmit, totalQuestions }: FinalReflectionProps) {
   const remaining = MAX_CHARS - value.length;
   const isOverLimit = remaining < 0;
 
@@ -22,7 +22,7 @@ export function FinalReflection({ value, onChange, onSubmit }: FinalReflectionPr
           <span className={styles.eyebrow}>Fim da partida</span>
           <h1 className={styles.title}>Diário de bordo</h1>
           <p className={styles.description}>
-            Depois de atravessar {questions.length} rodadas, vale guardar uma
+            Depois de atravessar {totalQuestions} rodadas, vale guardar uma
             frase. Pode ser uma descoberta, um incômodo, uma dúvida ou algo que
             você quer observar melhor fora do jogo.
           </p>

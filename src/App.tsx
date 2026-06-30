@@ -55,6 +55,7 @@ export default function App() {
           value={state.userReflection}
           onChange={(text) => dispatch({ type: 'SET_USER_REFLECTION', payload: text })}
           onSubmit={() => dispatch({ type: 'GO_TO_RESULTS' })}
+          totalQuestions={totalQuestions}
         />
       );
 
