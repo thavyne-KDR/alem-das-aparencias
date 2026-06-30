@@ -2,13 +2,13 @@ import { useMemo } from 'react';
 import { Layout } from '../../components/Layout/Layout';
 import { Button } from '../../components/Button/Button';
 import { RadarChart } from '../../components/RadarChart/RadarChart';
-import { questions as allQuestions } from '../../data/questions';
 import { calculateScores, buildResultSummary } from '../../utils/scoring';
-import type { CategoryScores } from '../../types';
+import type { CategoryScores, Question } from '../../types';
 import styles from './Results.module.css';
 
 interface ResultsProps {
   answers: number[];
+  selectedQuestions: Question[];
   userReflection: string;
   onRestart: () => void;
 }
@@ -27,8 +27,8 @@ const categoryDescShort: Record<keyof CategoryScores, string> = {
   reflexao: 'Fazer uma pausa boa antes de repetir uma resposta pronta',
 };
 
-export function Results({ answers, userReflection, onRestart }: ResultsProps) {
-  const scores = useMemo(() => calculateScores(allQuestions, answers), [answers]);
+export function Results({ answers, selectedQuestions, userReflection, onRestart }: ResultsProps) {
+  const scores = useMemo(() => calculateScores(selectedQuestions, answers), [selectedQuestions, answers]);
   const summary = useMemo(() => buildResultSummary(scores), [scores]);
 
   const categories = (Object.keys(scores) as (keyof CategoryScores)[]).sort(
@@ -42,7 +42,7 @@ export function Results({ answers, userReflection, onRestart }: ResultsProps) {
           <span className={styles.eyebrow}>Partida concluída</span>
           <h1 className={styles.title}>Painel final</h1>
           <p className={styles.description}>
-            Seu painel nasceu das escolhas feitas nas {allQuestions.length} rodadas.
+            Seu painel nasceu das escolhas feitas nas {selectedQuestions.length} rodadas.
             Ele não fecha quem você é, só mostra quais habilidades apareceram mais.
           </p>
         </header>
