@@ -1205,6 +1205,7 @@ function buildOptions(question: QuestionSeed, index: number) {
 export const questions: Question[] = questionSeeds.map((question, index) => ({
   id: index + 1,
   situation: question.situation,
+  focus: question.focus,
   options: buildOptions(question, index).map((text, optionIndex) => ({
     text,
     scores: scoreProfiles[question.focus][optionIndex],

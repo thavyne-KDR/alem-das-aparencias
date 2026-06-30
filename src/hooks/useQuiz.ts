@@ -1,14 +1,26 @@
 import { useReducer } from 'react';
-import type { QuizState, QuizAction } from '../types';
+import type { QuizState, QuizAction, Question } from '../types';
 import { questions } from '../data/questions';
 
-const initialState: QuizState = {
-  currentPage: 'home',
-  currentQuestionIndex: 0,
-  answers: [],
-  selectedOption: null,
-  userReflection: '',
-};
+const QUIZ_SIZE = 10;
+
+function pickRandomQuestions(count: number): Question[] {
+  const shuffled = [...questions].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+}
+
+function makeInitialState(): QuizState {
+  return {
+    currentPage: 'home',
+    currentQuestionIndex: 0,
+    answers: [],
+    selectedOption: null,
+    userReflection: '',
+    selectedQuestions: pickRandomQuestions(QUIZ_SIZE),
+  };
+}
+
+const initialState: QuizState = makeInitialState();
 
 function quizReducer(state: QuizState, action: QuizAction): QuizState {
   switch (action.type) {
@@ -31,7 +43,7 @@ function quizReducer(state: QuizState, action: QuizAction): QuizState {
 
     case 'NEXT_QUESTION': {
       const nextIndex = state.currentQuestionIndex + 1;
-      if (nextIndex >= questions.length) {
+      if (nextIndex >= state.selectedQuestions.length) {
         return {
           ...state,
           currentPage: 'final-reflection',
@@ -54,7 +66,7 @@ function quizReducer(state: QuizState, action: QuizAction): QuizState {
       return { ...state, currentPage: 'results' };
 
     case 'RESTART':
-      return initialState;
+      return makeInitialState();
 
     default:
       return state;

@@ -1,6 +1,5 @@
 import './styles/global.css';
 import { useQuiz } from './hooks/useQuiz';
-import { questions } from './data/questions';
 import { Home } from './pages/Home/Home';
 import { Introduction } from './pages/Introduction/Introduction';
 import { Questions } from './pages/Questions/Questions';
@@ -11,7 +10,8 @@ import { Results } from './pages/Results/Results';
 export default function App() {
   const { state, dispatch } = useQuiz();
 
-  const totalQuestions = questions.length;
+  const { selectedQuestions } = state;
+  const totalQuestions = selectedQuestions.length;
   const isLastQuestion = state.currentQuestionIndex === totalQuestions - 1;
 
   switch (state.currentPage) {
@@ -24,7 +24,7 @@ export default function App() {
     case 'question':
       return (
         <Questions
-          question={questions[state.currentQuestionIndex]}
+          question={selectedQuestions[state.currentQuestionIndex]}
           questionNumber={state.currentQuestionIndex + 1}
           totalQuestions={totalQuestions}
           selectedOption={state.selectedOption}
@@ -39,7 +39,7 @@ export default function App() {
 
       return (
         <Reflection
-          question={questions[reflectionQuestionIndex]}
+          question={selectedQuestions[reflectionQuestionIndex]}
           selectedOptionIndex={lastAnswerIndex}
           questionNumber={state.answers.length}
           totalQuestions={totalQuestions}
@@ -62,6 +62,7 @@ export default function App() {
       return (
         <Results
           answers={state.answers}
+          selectedQuestions={selectedQuestions}
           userReflection={state.userReflection}
           onRestart={() => dispatch({ type: 'RESTART' })}
         />

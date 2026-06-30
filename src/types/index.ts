@@ -20,6 +20,7 @@ export interface Question {
   situation: string;
   options: Option[];
   reflection: QuestionReflection;
+  focus: keyof CategoryScores;
 }
 
 export type Page =
@@ -36,6 +37,7 @@ export interface QuizState {
   answers: number[];
   selectedOption: number | null;
   userReflection: string;
+  selectedQuestions: Question[];
 }
 
 export type QuizAction =
