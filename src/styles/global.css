@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --color-bg: #f7fbf8;
-  --color-surface: #e5f5ef;
+  --color-bg: #fbf4ed;
+  --color-surface: #f2e6d8;
   --color-card: #ffffff;
-  --color-border: #b9ded3;
-  --color-border-strong: #78b9ad;
+  --color-border: #dec9a8;
+  --color-border-strong: #c4a080;
 
-  --color-text-primary: #10231f;
-  --color-text-secondary: #365f58;
-  --color-text-muted: #66867f;
+  --color-text-primary: #2d1b0e;
+  --color-text-secondary: #5c3d1e;
+  --color-text-muted: #8c6b4a;
 
-  --color-accent: #0f766e;
-  --color-accent-hover: #0b5f59;
-  --color-accent-light: #dff8f0;
-  --color-accent-lighter: #f1fcf8;
-  --color-token: #f4d35e;
-  --color-quest: #ef476f;
-  --color-shadow-card: #c5eee4;
+  --color-accent: #c4623a;
+  --color-accent-hover: #a84e2a;
+  --color-accent-light: #f5e0d5;
+  --color-accent-lighter: #faf0eb;
+  --color-token: #e8a838;
+  --color-quest: #e88030;
+  --color-shadow-card: #d4b896;
+  --color-question-card: #d8edf5;
 
   --color-white: #ffffff;
 

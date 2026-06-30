@@ -6,7 +6,7 @@
   padding: 16px;
   background-color: var(--color-card);
   border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-xl);
   text-align: left;
   cursor: pointer;
   transition: border-color var(--transition-fast),
